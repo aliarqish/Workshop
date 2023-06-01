@@ -7,9 +7,11 @@
 
 ### Installation
 
-Clone the repository. The "main" branch is the most updated one. The "develop" branch is used for developing features.
+• Clone the repository.
+• The "main" branch is the most updated one.
+• The "develop" branch is used for developing features.
 
-Run `yarn` in the root.
+• Run `yarn` in the root.
 
 ---
 
@@ -27,12 +29,12 @@ This project contains the following configuration
 
 **Android**
 
-run `yarn android` in the root
+• Run `yarn android` in the root
 
 **iOS**
 
-Run `pod install/arch -x86_64 pod install` in the ios folder.
-Then `yarn ios` in the root
+• Run `pod install/arch -x86_64 pod install` in the ios folder.
+• Then `yarn ios` in the root
 
 ###### Certificates
 
@@ -41,7 +43,7 @@ Then `yarn ios` in the root
 
 **Developers**
 
-Arquish Ali
+• Arquish Ali
 
 ---
 
