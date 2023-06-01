@@ -1,0 +1,49 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/TitilliumWeb-Black.ttf",
+      "sha1": "89d3de80cadfe851af240e46e3e1e645a4718384"
+    },
+    {
+      "path": "src/assets/fonts/TitilliumWeb-Bold.ttf",
+      "sha1": "338a89991f9244d6392b647be9632e97fc285eb7"
+    },
+    {
+      "path": "src/assets/fonts/TitilliumWeb-BoldItalic.ttf",
+      "sha1": "12cf3aafa35a7a3aab657c5de356c2e116782f27"
+    },
+    {
+      "path": "src/assets/fonts/TitilliumWeb-ExtraLight.ttf",
+      "sha1": "8a3d7fe95127e5c74e796862bbc561b928a84aa7"
+    },
+    {
+      "path": "src/assets/fonts/TitilliumWeb-ExtraLightItalic.ttf",
+      "sha1": "2a5f84248bfe6b8c6d0a902c6d4011f54bd093ce"
+    },
+    {
+      "path": "src/assets/fonts/TitilliumWeb-Italic.ttf",
+      "sha1": "b3a11f1c28825d60c3a1482d78be3daaa4767d8e"
+    },
+    {
+      "path": "src/assets/fonts/TitilliumWeb-Light.ttf",
+      "sha1": "51ec3675bb54e357ab24eb88b53d596035d1eccd"
+    },
+    {
+      "path": "src/assets/fonts/TitilliumWeb-LightItalic.ttf",
+      "sha1": "628937cef05eef38c5a1eb9e339639c5a2239519"
+    },
+    {
+      "path": "src/assets/fonts/TitilliumWeb-Regular.ttf",
+      "sha1": "d865b839ba95b93d11458f1ac530013965dd52ac"
+    },
+    {
+      "path": "src/assets/fonts/TitilliumWeb-SemiBold.ttf",
+      "sha1": "8fd5236a662501794f49e1b880338cc16cd7f5e9"
+    },
+    {
+      "path": "src/assets/fonts/TitilliumWeb-SemiBoldItalic.ttf",
+      "sha1": "8e23959076655564d509c79f903d8e6d6988bfad"
+    }
+  ]
+}
