@@ -10,6 +10,7 @@ import {
   StyleSheet,
   Image,
   TextInput,
+  Text,
 } from 'react-native';
 import {ImageConstants} from '../assets/ImageConstants';
 import convertPixelToDp from '../utils/PixelConverter';
@@ -17,12 +18,12 @@ import {Colors, Fonts} from '../theme';
 
 const SearchBar = props => {
   const [searchEnabled, setSearchEnabled] = useState(false); // State to check if user has tapped on search icon & enabled searching
+  const pageTitle = 'Romantic Comedy';
 
   return (
     <ImageBackground
       source={ImageConstants.navBar}
       style={[styles.container, {height: convertPixelToDp(props?.height)}]}>
-      {searchEnabled ? (
         <TouchableOpacity
           onPress={() => {
             setSearchEnabled(false);
@@ -33,9 +34,6 @@ const SearchBar = props => {
             style={styles.backButtonStyle}
           />
         </TouchableOpacity>
-      ) : (
-        <View />
-      )}
 
       {searchEnabled ? (
         <TextInput
@@ -48,7 +46,7 @@ const SearchBar = props => {
           keyboardType="default"
         />
       ) : (
-        <View />
+        <Text style={styles.inputs}>{pageTitle}</Text>
       )}
 
       <TouchableOpacity
@@ -88,8 +86,8 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: convertPixelToDp(30),
     color: Colors.white,
-    fontFamily: Fonts.TitilliumWebLight,
-    fontSize: convertPixelToDp(48), // 36pt as per design which equals to 48px
+    fontFamily: Fonts.TitilliumWebRegular,
+    fontSize: convertPixelToDp(58),
   },
   searchIconContainer: {
     alignContent: 'flex-end',
