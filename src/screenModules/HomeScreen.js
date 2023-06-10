@@ -11,6 +11,7 @@ import convertPixelToDp from '../utils/PixelConverter';
 
 const HomeScreen = () => {
   const [content, setContent] = useState([]); // List to show the poster data
+  const [searchContent, setSearchContent] = useState([]); // List to show searched data
   const [pageCount, setPageCount] = useState(0); // Used for pagination
   const [totalItems, setTotalItems] = useState(0); // Used for pagination
   const [searchQuery, setSearchQuery] = useState(''); // Used for searching the poster data
@@ -70,7 +71,8 @@ const HomeScreen = () => {
   // Main function which handles pagination and loads more data when user reaches the end of FlatList
   const loadMoreData = () => {
     // If user has made some search then not load more data to avoid mixing of data
-    if (searchQuery) {
+    // Second check added to ensure pagination doesn't stop working for initial list if user has made some search but got no results
+    if (searchQuery !== '' && searchContent.length > 0) {
       return;
     }
 
@@ -130,7 +132,9 @@ const HomeScreen = () => {
     searchResults = searchArr?.filter(item =>
       item?.name?.toLowerCase()?.includes(lowerCaseSearchQuery),
     );
-    setContent(searchResults);
+    if (searchResults.length > 0) {
+      setSearchContent(searchResults);
+    }
   };
 
   /**
@@ -151,8 +155,7 @@ const HomeScreen = () => {
         onBack={onBackButtonPress}
       />
       <FlatList
-        data={content}
-        extraData={content}
+        data={searchContent.length > 0 ? searchContent : content}
         style={{paddingTop: convertPixelToDp(searchBarHeight + 36)}}
         contentContainerStyle={Styles.flatlistContainerStyle}
         renderItem={({item}) => {
@@ -168,17 +171,12 @@ const HomeScreen = () => {
         keyExtractor={(item, index) => index}
         numColumns={3}
         showsVerticalScrollIndicator={false}
+        scrollEventThrottle={16}
         onEndReachedThreshold={0.9}
         onEndReached={loadMoreData}
-        onScrollBeginDrag={() => {
-          onEndReachedCalledDuringMomentum.current = false;
-        }}
-        onMomentumScrollBegin={() => {
-          onEndReachedCalledDuringMomentum.current = false;
-        }}
-        onMomentumScrollEnd={() => {
-          onEndReachedCalledDuringMomentum.current = false;
-        }}
+        onScrollBeginDrag={() => { onEndReachedCalledDuringMomentum.current = false }}
+        onMomentumScrollBegin={() => { onEndReachedCalledDuringMomentum.current = false }}
+        onMomentumScrollEnd={() => { onEndReachedCalledDuringMomentum.current = false }}
       />
     </View>
   );
